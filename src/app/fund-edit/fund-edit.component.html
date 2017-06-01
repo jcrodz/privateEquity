@@ -1,0 +1,53 @@
+<div class="container-flow">
+  <div class="row">
+
+    <app-side-nav-admin></app-side-nav-admin>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Funds</h1>
+      <div class="row tab-wrap">
+        <div class="col-md-4 col-md-offset-3">
+          <div class="panel panel-default">
+            <div class="panel-heading"> <strong class="">Update Fund Form</strong></div>
+            <div class="panel-body">
+              <form>
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span></span>
+                  <select type="text" class="form-control" id="InputFund" [(ngModel)]="fund.fundName" name="fund">
+										<option value="{{fund.fundName}}">{{fund.fundName}}</option>
+                  </select>
+                </div><br>
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                  <input type="date" class="form-control" placeholder="" id="InputDate" [(ngModel)]="fund.openDate" name="openDate">
+                </div><br>
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
+                  <input type="currency" class="form-control" placeholder="Invested Amount" id="InputTotalInvestment" [(ngModel)]="fund.totalInvestment"
+                    name="totalInvestment">
+                </div><br>
+                <div class="input-group">
+                  <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                  <input type="date" class="form-control" placeholder="" id="InputCloseDate" [(ngModel)]="fund.closedDate" name="closedDate">
+                </div><br>
+                <div class="row">
+                  <div class="col-md-12">
+                    <alert type="success" *ngIf="successMessage" dismissOnTimeout="5000">
+                      <strong>Updated!</strong> Fund was updated succesfully.
+                    </alert>
+                  </div>
+                </div>
+                <div class="col-md-2 col-md-offset-1">
+                  <button type="submit" class="btn btn-warning btn-primary" [routerLink]="['/funds']">Back to List</button>
+                </div>
+                <div class="col-md-1 col-md-offset-4">
+                  <button type="submit" class="btn btn-success btn-primary" (click)="updateFund()">Update</button>
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

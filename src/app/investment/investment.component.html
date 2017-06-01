@@ -1,0 +1,49 @@
+<div class="container-flow">
+  <app-side-nav-admin></app-side-nav-admin>
+  <div class="row">
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Add Investment</h1>
+      <div class="col-md-6 col-md-offset-2">
+        <div class="panel panel-default">
+          <div class="panel-heading"> <strong class="">Investment Form</strong></div>
+          <div class="panel-body">
+            <form>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-piggy-bank" aria-hidden="true"></span></span>
+                  <select type="text" class="form-control" id="InputFund" [(ngModel)]="investment.fund" name="fund">
+										<option *ngFor="let fund of funds" value="{{fund._id}}">{{fund.fundName}}</option>
+                  </select>
+              </div><br>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span></span>
+                <input type="date" class="form-control" placeholder="" id="InputName" [(ngModel)]="investment.investmentDate" name="investmentDate">
+              </div><br>
+              <div class="input-group">
+                <span class="input-group-addon"><span class="glyphicon glyphicon-usd" aria-hidden="true"></span></span>
+                <input type="currency" class="form-control" placeholder="Invested Amount" id="InputTotalInvestment" [(ngModel)]="investment.totalInvestment" name="totalInvestment">
+              </div><br>
+              <div class="row">
+                <div class="col-md-12">
+                  <alert type="success" *ngIf="successMessage" dismissOnTimeout="5000">
+                    <strong>Added!</strong> New Investment was added.
+                  </alert>
+                </div>
+                <div class="col-md-12">
+                  <alert type="success" *ngIf="successFund" dismissOnTimeout="5000">
+                    <strong>Fund Updated!</strong> New Investment added to fund.
+                  </alert>
+                </div>
+              </div>
+              <div class="col-md-2 col-md-offset-3">
+                <button type="submit" class="btn btn-warning btn-primary" [routerLink]="['/investors']">Back to List</button>
+              </div>
+              <div class="col-md-2 col-md-offset-2">
+                <button type="submit" class="btn btn-success btn-primary" (click)="add()">Add</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

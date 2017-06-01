@@ -1,0 +1,46 @@
+
+<div class="container-flow">
+  <app-side-nav-admin></app-side-nav-admin>
+  <div class="row">
+  
+    
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Investors</h1>
+            <tabset [justified]="true" class='tabs'>
+              <tab class="tab-head" (click)="getInvestors()" heading="List of Investors">
+                  <div class="table-responsive">
+                    <table class="table table-striped">
+                      <thead>
+                        <tr>
+                          <th>Company Name</th>
+                          <th>Contact Name</th>
+                          <th>Country</th>
+                          <th></th>
+                          <th></th>
+                          <th></th>
+                        </tr>
+                      </thead>
+                      <tbody *ngFor="let investor of investors">
+                        <tr>
+                          <td>{{investor.company}}</td>
+                          <td>{{investor.contactName}}</td>
+                          <td>{{investor.country}}</td>
+                          <td><button type="button" class="btn btn-primary" [routerLink]="['/report', investor._id]">Add Report</button></td>
+                          <td><button type="button" class="btn btn-warning" [routerLink]="['/investor-detail', investor._id]">Edit Profile</button></td>
+                          <td><button type="button" class="btn btn-success" [routerLink]="['/investment', investor._id]">Add Investment</button></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+              </tab>
+              <tab class="tab-head" heading="Add Investor">
+                <div class="row tab-wrap">
+                <app-signup></app-signup>
+                </div>
+              </tab>
+              
+            </tabset>
+            
+          
+        </div>
+

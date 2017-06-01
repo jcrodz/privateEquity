@@ -1,0 +1,13 @@
+<div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li [routerLinkActive]="['active']" *ngIf="!this.user"><a [routerLink]="['/dashboard-investor']">Dashboard<span class="sr-only">(current)</span></a></li>
+            <li [routerLinkActive]="['active']" *ngIf="this.user"><a [routerLink]="['/dashboard']">Dashboard<span class="sr-only">(current)</span></a></li>
+            <li [routerLinkActive]="['active']" *ngIf="this.user"><a [routerLink]="['/funds']">Funds</a></li>
+            <li [routerLinkActive]="['active']" *ngIf="this.user"><a [routerLink]="['/investors']">Investors</a></li>
+            <!--<li [routerLinkActive]="['active']"><a [routerLink]="['/investments']">Investments</a></li>
+            <li [routerLinkActive]="['active']"><a [routerLink]="['/report']">Reports</a></li>-->
+          </ul>
+</div>
+
+
+

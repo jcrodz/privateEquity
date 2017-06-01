@@ -1,0 +1,19 @@
+<div class="container-flow">
+  <div class="row">
+
+    <app-side-nav-admin></app-side-nav-admin>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Dashboard</h1>
+      <div class="col-md-10">
+      <h2>Funds</h2>
+      <div>
+        <div style="display: block">
+          <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions" [legend]="barChartLegend"
+            [chartType]="barChartType" (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </div>
+</div>

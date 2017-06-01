@@ -1,0 +1,57 @@
+/*.container {
+    padding-top: 5%;
+}*/
+
+.top-image {
+    height: 20%;
+
+}
+
+.top-image {
+    height: 40vh;
+    background: url("https://www.prtourism.com/dnn/Portals/0/DNNGallery/uploads/2015/6/15/Slide-Turismo-2.jpeg")no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.people {
+    padding: 3% 0%;
+}
+
+/*.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+div {
+    display: block;
+}
+
+.text {
+    /*margin: 0;*/
+    text-align: center;
+    padding: 5% 1%;
+    color: white;
+    stroke: black;
+}
+
+h1 {
+   -webkit-text-stroke: 1px black;
+   color: white;
+   font-size: 7vh;
+   /*text-shadow:
+       3px 3px 0 #000,
+     -1px -1px 0 #000,  
+      1px -1px 0 #000,
+      -1px 1px 0 #000,
+       1px 1px 0 #000;*/
+}

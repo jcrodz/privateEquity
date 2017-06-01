@@ -1,0 +1,32 @@
+<div class="container-flow">
+  <div class="row">
+
+    <app-side-nav-admin></app-side-nav-admin>
+    <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+      <h1 class="page-header">Reports</h1>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Company Name</th>
+                <th>Contact Name</th>
+                <th>Report Name</th>
+                <th>Report Date</th>
+                <th>Download File</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody *ngFor="let report of reports">
+              <tr>
+                <td>{{investor.company}}</td>
+                <td>{{investor.contactName}}</td>
+                <td>{{report.reportName}}</td>
+                <td>{{report.reportDate | date: 'MMM-dd-yyyy'}}</td>
+                <td><a href="{{report.reportFile}}" download="report"><button type="button" class="btn btn-success">Download</button></a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+    </div>
+  </div>
+</div>
